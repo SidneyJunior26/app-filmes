@@ -1,0 +1,14 @@
+.mat-card-image {
+    width: 182px;
+    height: 268px;
+    margin: auto;
+    display: block;
+}
+
+.mat-raised-button {
+    margin: 0 5px 0 5px;
+}
+
+.main-div {
+    margin-top: 10px;
+}

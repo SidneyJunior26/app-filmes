@@ -1,0 +1,20 @@
+<mat-toolbar class="app-title">Cadastrar Filme</mat-toolbar>
+<div class="main-div">
+  <mat-card class="center width50" *ngIf="cadastro">
+    <form novalidate [formGroup]="cadastro" novalidate (ngSubmit)="submit()">
+      <mat-card-content>
+        <app-input-text titulo="Título" [formGroup]="cadastro" controlName="titulo"></app-input-text>
+        <app-input-text titulo="Link Foto" [formGroup]="cadastro" controlName="urlFoto"></app-input-text>
+        <app-input-date titulo="Data de Lançamento" [formGroup]="cadastro" controlName="dtLancamento"></app-input-date>
+        <app-input-textarea titulo="Descrição" [formGroup]="cadastro" controlName="descricao"></app-input-textarea>
+        <app-input-number titulo="Nota IMDb" [formGroup]="cadastro" controlName="nota" step="0.1"></app-input-number>
+        <app-input-text titulo="Link IMDb" [formGroup]="cadastro" controlName="urlIMDb"></app-input-text>
+        <app-input-select titulo="Gênero" [formGroup]="cadastro" controlName="genero" [opcoes]="generos"></app-input-select>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" class="btn btn-primary" mat-raised-button>Salvar</button>
+        <button (click)="limparForm()" class="btn btn-secondary" mat-raised-button>Cancelar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,22 @@
+// define 3 theme color
+@use '@angular/material' as mat;
+// mat-palette accepts $palette-name, main, lighter and darker variants
+
+
+$default-theme-primary: mat.define-palette(mat.$cyan-palette, 500, 100, 900);
+$default-theme-accent: mat.define-palette(mat.$orange-palette, 800, 300, 200);
+$default-theme-warn: mat.define-palette(mat.$red-palette, A700);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$default-theme: mat.define-dark-theme(
+    $default-theme-primary,
+    $default-theme-accent,
+    $default-theme-warn
+);
+
+@include mat.all-component-themes($default-theme);
+
+
+footer {
+  background-color: mat.get-color-from-palette($default-theme-primary);
+}
